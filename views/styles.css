@@ -1,0 +1,565 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+body {
+    min-height: -webkit-fill-available;
+    background-color: #FFFFFF;
+    transition: background 0.2s linear;
+  }
+
+body.dark {
+    background-color: #04052e;
+  }
+
+body.dark .display-1, body.dark .display-3 {
+      color: white;
+  }
+body.dark #Subtitle {
+      color: white;
+  }
+
+  body.dark .navbar {
+      border-bottom: 1px solid white;
+  }
+
+  body.dark .navbar-toggler {
+      border: 1px solid lightgray;
+  }
+
+body.dark .navbar, body.dark .navbar-nav li a {
+      background-color: #2e2e53 !important;
+      color: white !important;
+  }
+
+body.dark .navbar-nav a::before {
+    background-color: white;
+}
+
+body.dark #nav-logo {
+    color: white;
+}
+
+body.dark #About {
+    background: 
+    linear-gradient(to right, #2e2e53, #2e2e53), 
+    linear-gradient(15deg, #30F5BC , #C95EEB); 
+    color: white;
+}
+body.dark #About p{
+    color: white;
+}
+
+body.dark #Contact {
+    background: 
+    linear-gradient(to right, #2e2e53, #2e2e53), 
+    linear-gradient(15deg, #30F5BC , #C95EEB); 
+    color: white;
+}
+
+body.dark .card {
+    background-color: #2e2e53;
+}
+
+body.dark .card p {
+    color: white;
+}
+
+body.dark .footer {
+    background-color: #2e2e53;
+}
+
+body.dark .footer-logos {
+    color: #ddd;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+section {
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw; 
+}  
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 290px) {
+    p, h2 {font-size: 14px !important;}
+}
+
+  @media screen and (max-width: 420px) {
+    h2 {font-size: 30px;}
+    p {font-size: 15px;}
+    #About {margin-top: 1rem;}
+    .portfolio {margin-top: 10vh;}
+    .display-1 {font-size: 55px !important;}
+    .display-3 {font-size: 50px !important;}
+    .display-4 {font-size: 40px !important;}
+    #Subtitle {font-size: 25px !important;}
+    .small-icon {font-size: 3vh !important;}
+    #Home {padding-bottom: 1rem; }
+    .buttons {margin-top: 5vh !important; margin-bottom: 2vh;}
+    #about-section {background-image: none !important;}
+    #contact-section {background-image: none !important; padding-top: 2rem !important; padding-bottom: 1rem !important;}
+  }
+
+  @media screen and (max-width: 700px) {
+    .btn1, .btn2, .btn3 {font-size: 18px !important; padding: 0.5rem !important; display: block !important;}
+  }
+
+
+  @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    #Home {padding-bottom: 5rem;}
+    h2 {font-size: 30px;}
+    p {font-size: 15px;}
+    .portfolio {margin-top: 10vh;}
+    .display-1 {font-size: 55px !important;}
+    .display-3 {font-size: 50px !important;}
+    .display-4 {font-size: 40px !important;}
+    #Subtitle {font-size: 25px !important;}
+    .small-icon {font-size: 3vh !important;}
+    }
+
+/* ANIMATIONS */
+
+.js-scroll {
+    position: relative;
+    opacity: 0;
+}
+
+@media screen and (max-width: 320px){
+    .js-scroll {top: 50%;}
+}
+@media screen and (max-width: 480px){
+    .js-scroll {top: 40%;}
+}
+
+.js-scroll.active {
+    opacity: 1;
+    transition: opacity 0s, ;
+}
+
+.active.fade-in-bottom {
+    animation: fade-in-bottom 1s ease-in-out both;
+  }
+
+  @keyframes fade-in-bottom {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .active.slide-right {
+    animation: slide-in-right 1s ease-in-out both;
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+.js-scroll.active > .picture {
+    transform: scale(1);
+    transition: 1s ease-out;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar-nav li a{
+    margin-left: 50px;
+    margin-right: 50px;
+    font-weight: 600;
+}
+.navbar-nav a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-nav a:hover::before {
+    transform: scaleX(1);
+  }
+
+#nav-logo {
+    font-size: 28px;
+    display: block;
+}
+
+#nav-logo:hover {
+    transform: scale(1.2);
+    transition: transform 150ms;
+}
+
+
+.label {
+    width: 50px;
+    height: 26px;
+    background-color: #111;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.ball {
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.1s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+
+.moon {
+    color: #f1c40f;
+}
+
+.sunny {
+    color: #f39c12;
+}
+
+/* HEADER */
+
+#Home {
+    background-image: url(./images/layered-peaks-haikei.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pageTitle {
+    text-align: center;
+    padding-top: 30vh;
+}
+
+#Subtitle {
+    font-size: 30px;
+    margin-top: 4vh;
+}
+
+.buttons {
+    margin-top: 15vh;
+}
+
+a {
+    display:inline-block;
+    text-decoration: none !important;
+}
+
+.btn1:hover, .btn2:hover, .btn3:hover {
+    transform: translateY(-0.2rem); 
+    transition: transform 150ms;
+    outline: none;
+    color: black !important;
+}
+
+.btn1:active, .btn2:active, .btn3:active {
+    text-decoration: none;
+    outline: none;
+}
+.btn1:focus, .btn2:focus, .btn3:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.btn1, .btn2, .btn3 {
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    font-size: 22px;
+    color: #595959;
+    font-weight: 400;
+    padding: 1rem;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(15deg, #30F5BC , #C95EEB); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+/* ABOUT */
+
+#about-section {
+    background-image: url(./images/layered-peaks-haikei-flipped.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#About {
+    padding-top: 10vh;
+    border-radius: 20px;
+    padding: 5rem;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(15deg, #30F5BC , #C95EEB); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    -webkit-box-shadow: 2px 5px 18px 2px rgba(0,0,0,0.55); 
+    box-shadow: 2px 5px 18px 2px rgba(0,0,0,0.55);
+}
+
+p {
+    padding-top: 1.5rem;
+    font-size: 20px;
+    color: #595959;
+}
+
+h2 {
+    font-size:60px;
+}
+
+.icons {
+    margin-top: 5vh;
+}
+
+.stack > h2 {
+    margin-top: 8vh;
+}
+
+.langs {
+    display: inline-block;
+    font-size: 5vh;
+    margin: 1vh;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.langs:hover {
+    transform: scale(1.2);
+    transition: transform 150ms;
+}
+
+/* PORTFOLIO */
+
+#portfolio-section {
+border: 1px solid black;
+padding-top: 5vh;
+-webkit-box-shadow: inset 0px 0px 15px -4px rgba(0,0,0,0.5); 
+box-shadow: inset 0px 0px 15px -4px rgba(0,0,0,0.5);
+}
+
+.portfolio {
+    border-radius: 20px;
+    width: 100%;
+    padding-top: 7vh;
+    padding: 3vh;
+    height: fit-content !important;
+}
+
+.portfolio > .card {
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 10px;
+    height: auto;
+    padding-bottom: 1rem;
+    
+}
+.portfolio .card:hover {
+    transform: scale(1.01);
+    transition: transform 150ms;
+}
+.portfolio > h2 {
+margin-bottom: 3rem;
+}
+
+.small-icon {
+    font-size: 2.5vh;
+    border: none;
+    display: inline-block;
+}
+
+.links a {
+    margin: 10px;
+    padding: 2px;
+    font-weight: 500;
+    color: #212529;
+    border-radius: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(15deg, #30F5BC , #C95EEB); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.links  a:hover, .links  a:active {
+    color: #212529;
+    transform: scale(0.95);
+    transition: transform 150ms;
+}
+
+.code-links  a {
+    margin: 10px;
+    padding: 2px;
+    font-weight: 500;
+    color: #212529;
+    border-radius: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(15deg, #30F5BC , #C95EEB); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.code-links  a:hover, .code-links  a:active {
+    color: #212529;
+    transform: scale(0.95);
+    transition: transform 150ms;
+}
+
+/* CONTACT */
+
+#contact-section {
+    background-image: url(./images/layered-peaks-haikei.svg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 8rem;
+}
+
+#Contact {
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(15deg, #30F5BC , #C95EEB); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    padding: 4rem;
+    border-radius: 20px;
+    -webkit-box-shadow: 2px 5px 18px 2px rgba(0,0,0,0.55); 
+    box-shadow: 2px 5px 18px 2px rgba(0,0,0,0.55);
+    background-color: #f2f2f2;
+}
+
+#submit {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #595959;
+    font-weight: 400;
+    padding: 0.6rem;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(15deg, #30F5BC , #C95EEB); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+#submit:active, #submit:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+#submit:hover {
+    transform: scale(0.95);
+    transition: transform 150ms;
+}
+
+
+/* SUCCESS PAGE */
+
+#Success {
+    background-image: url(./images/layered-peaks-haikei-flipped.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 20vh;
+}
+
+.success-card {
+    padding-top: 10vh;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(15deg, #30F5BC , #C95EEB); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    border-radius: 20px;
+    padding: 5rem;
+    background-color: #f2f2f2;
+    -webkit-box-shadow: 2px 5px 18px 2px rgba(0,0,0,0.55); 
+    box-shadow: 2px 5px 18px 2px rgba(0,0,0,0.55);
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: #e9ecef;
+    padding: 2rem;
+    font-weight: 500;
+}
+
+.footer-logos {
+    font-size: 25px;
+    color: #212529;
+    margin: 5px;
+}
+
+.footer-logos:hover {
+    transform: scale(1.2);
+    transition: transform 150ms;
+}
